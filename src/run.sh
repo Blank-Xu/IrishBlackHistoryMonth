@@ -2,22 +2,9 @@
 
 PROJECT_NAME="webservice"
 
+bash build.sh
 
-echo "---- update package"
-go get -u -v
+echo "start service..."
+echo ""
 
-
-echo "---- run go mod tidy"
-go mod tidy
-
-
-echo "---- run test"
-go test -v .
-
-
-echo "---- build application"
-go build -o ${PROJECT_NAME}
-
-
-echo "---- start application"
-./${PROJECT_NAME}
+./${SERVICE_NAME}
