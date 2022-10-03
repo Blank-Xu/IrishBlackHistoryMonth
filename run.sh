@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT_NAME="webservice"
+SERVICE_NAME="webservice"
 
 bash build.sh
 

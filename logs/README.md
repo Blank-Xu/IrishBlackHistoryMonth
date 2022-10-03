@@ -1,3 +1,3 @@
 # logs
 
-This folder is used to store logs.
+This folder is used for store service logs.
