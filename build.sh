@@ -1,12 +1,24 @@
-#!/bin/bash
+#!/bin/sh
 
-SERVICE_NAME="webservice"
+set -e
+set -u
+# set -x
+
+
+SERVICE_NAME=$1
+if [ X"${SERVICE_NAME}" = X"" ]
+then
+  SERVICE_NAME="webservice"
+fi
 
 
 echo ""
+echo "service name: ${SERVICE_NAME}" 
 echo "build start..."
 
+
 # go get -u -v
+# go mod tidy
 
 
 echo " - download the necessary packages"
@@ -18,10 +30,8 @@ echo " - verify the packages"
 # Verify dependencies
 go mod verify
 
-# go mod tidy
-
 
 echo " - build the service"
-go build -o ${SERVICE_NAME}
+CGO_ENABLED=0 go build -o ${SERVICE_NAME}
 echo " - build success"
 echo ""

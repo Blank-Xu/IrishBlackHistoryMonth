@@ -1,3 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
-go test -v ./...
+set -e
+set -u
+# set -x
+
+
+echo "test start..."
+go test -v  -cover ./...

@@ -1,8 +1,15 @@
-#!/bin/bash
+#!/bin/sh
+
+set -e
+set -u
+# set -x
+
 
 SERVICE_NAME="webservice"
 
-bash build.sh
+
+sh build.sh ${SERVICE_NAME}
+
 
 echo "start service..."
 echo ""
